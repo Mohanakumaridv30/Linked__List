@@ -15,7 +15,6 @@ public class LinkedList {
         }
         return newNode;
     }
-
     public void append(int data) { // 56=> 30=> 70
         Node newNode = new Node(data);
         if (head == null) {
@@ -26,8 +25,7 @@ public class LinkedList {
             tail = newNode;
         }
     }
-
-    public void insertInBetween(Node previousNode, Node newNode) {
+    public void insertInBetween(Node previousNode ,Node newNode){
         Node tempNode = previousNode.next;
         previousNode.next = newNode;
         newNode.next = tempNode;
@@ -45,17 +43,15 @@ public class LinkedList {
             }
         }
     }
-
-    public void pop() {
-        if (this.head == null) {
+    public void pop(){
+        if(this.head==null){
 
         }
-        Node temp = head;
+        Node temp =head;
         head = temp.next;
-        temp = null;
+        temp =null;
     }
-
-    public void popLast() {
+    public void popLast(){
         if (head == null)
             System.out.println("No elements to delete..");
         else if (head.next == null)
@@ -69,5 +65,33 @@ public class LinkedList {
 
             temp.next = null;
         }
+    }
+    public void search(int searchData)
+    {
+        if(head.key == searchData)
+            System.out.println(searchData + " is Found");
+        else
+        {
+            Node temp=head;
+
+            boolean isFound=false;
+
+            while(temp!=null)
+            {
+                if(temp.key == searchData)
+                {
+                    isFound = true;
+                    break;
+                }
+
+                temp=temp.next;
+            }
+            System.out.println("                      ");
+            if(isFound == true)
+                System.out.println(searchData+ " is Found");
+            else
+                System.out.println(searchData+" is not found..");
+        }
+
     }
 }
