@@ -1,29 +1,31 @@
 package com.bridgelabz.linkedlist;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome To My LinkedList");
-        LinkedList<Integer> linkList1 = new LinkedList<>();
-        linkList1.push(70);
-        linkList1.push(30);
-        linkList1.push(56);
-        linkList1.show();
+        System.out.println("Welcome to linkedList DataStructure Program");
+        System.out.println("Welcome to linkedList DataStructure Program");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter 1 to add the data at the start"); // UC 2
+        System.out.println("Enter 2 to add the data at the End"); // UC 3
+        System.out.println("Enter 3 to add the data at In Between "); // UC 4
+        System.out.println("Enter 4 to delete the data at first position "); // UC 5
 
-        LinkedList<Integer> linkedList2 = new LinkedList<>();
-        linkedList2.append(56);
-        linkedList2.append(30);
-        linkedList2.append(70);
-        linkedList2.show();
-        System.out.println(linkedList2.searchNode(30));
+        switch (scanner.nextInt()) {
 
-        LinkedList<Integer> linkedList3=new LinkedList<>();
-        System.out.println("\n******** : Insert a node in between : *********");
-        linkedList3.append(56);
-        linkedList3.append(70);
-        System.out.println("********** : Display linked list without insert : *********");
-        linkedList3.show(); // Display Node elements
-        System.out.println("******** : Display linked list insert a node in between : *******");
-        linkedList3.searchAndAdd(56,30);
-        linkedList3.show(); // Display Node elements
+            case 1:
+                Operation.addDataAtStart();
+                break;
+            case 2:
+                Operation.addDataAtEnd();
+                break;
+            case 3:
+                Operation.insertInBetween();
+                break;
+            case 4:
+                Operation.pop();
+                break;
+        }
     }
 }

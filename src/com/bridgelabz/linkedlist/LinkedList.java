@@ -1,63 +1,55 @@
 package com.bridgelabz.linkedlist;
 
-public class LinkedList<T> {
-    Node<T> head;
-    Node<T> tail;
+public class LinkedList {
+    Node head, tail;
 
-    public void push(T key) {
-        Node<T> newNode = new Node<>(key);
+    public Node push(int data) {
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
-            newNode.next = head;
-            head = newNode;
+            Node temp = head;//56=>30=>70
+            this.head = newNode;
+            newNode.next = temp;
         }
+        return newNode;
     }
 
-    public void show() {
-        Node<T> temp = head;
-        while (temp != null) {
-            System.out.print(temp.key + "=>");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
-    public void append(T key) {
-        Node<T> newNode = new Node<>(key);
+    public void append(int data) { // 56=> 30=> 70
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
-            tail.next = newNode;
+            this.tail.next = newNode;
             tail = newNode;
         }
     }
 
+    public void insertInBetween(Node previousNode, Node newNode) {
+        Node tempNode = previousNode.next;
+        previousNode.next = newNode;
+        newNode.next = tempNode;
+    }
 
-    public Node<T> searchNode(T key) {
+    public void print() {
         if (head == null) {
-            System.out.println("linkList is null");
+            System.out.println("Linked List is Empty");
         } else {
-            Node<T> currentNode = head;
-            while (currentNode != null) {
-                if (currentNode.key.equals(key)) {
-                    return currentNode;
-                }
-                currentNode = currentNode.next;
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.key + " ");
+                temp = temp.next;
             }
         }
-        return null;
     }
 
-    public void searchAndAdd(T searchKey, T addKey) {
-        Node<T> searchNode = searchNode(searchKey);//30
-        Node<T> temp = searchNode.next;
-        Node<T> newNode = new Node<>(addKey);//40
-        if (searchNode != null) {
-            searchNode.next = newNode;//30=>40
-            newNode.next = temp;//40=?70
+    public void pop() {
+        if (this.head == null) {
+            Node temp = head;
+            head = temp.next;
+            temp = null;
         }
     }
 }
