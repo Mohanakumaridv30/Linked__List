@@ -9,8 +9,7 @@ public class LinkedList<T> {
         if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else {
+        } else {
             newNode.next = head;
             head = newNode;
         }
@@ -24,4 +23,16 @@ public class LinkedList<T> {
         }
         System.out.println();
     }
+
+    public void append(T key) {
+        Node<T> newNode = new Node<>(key);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
 }
+
