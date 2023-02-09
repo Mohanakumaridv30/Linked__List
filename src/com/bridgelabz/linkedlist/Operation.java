@@ -8,6 +8,8 @@ public class Operation {
         linkedList.push(30);
         linkedList.push(56);
         linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
     }
 
     // Created a method to add data at end.
@@ -31,6 +33,8 @@ public class Operation {
         System.out.println(                             );
         System.out.println("After");
         linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
     }
     // create a method for delete first  element
     public static void pop(){
@@ -44,6 +48,8 @@ public class Operation {
         System.out.println(            );
         System.out.println("After");
         linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
 
 
     }
@@ -59,6 +65,8 @@ public class Operation {
         linkedList.popLast();
         System.out.println("After");
         linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
 
     }
     //method to search specific value
@@ -70,6 +78,8 @@ public class Operation {
         System.out.println("Before");
         linkedList.print();
         linkedList.search(30);
+        System.out.println(" ");
+        linkedList.size();
     }
     public static void insertAtSpecificIndex() {
         LinkedList linkedList = new LinkedList();
@@ -82,5 +92,29 @@ public class Operation {
         linkedList.insertAtSpecificIndex(2, 40);
         System.out.println("After");
         linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
+
+    }
+    public static void deleteAtIndexPosition(){
+        LinkedList linkedList = new LinkedList();
+        Node firstNode = linkedList.push(70);
+        Node secondNode = linkedList.push(30);
+        Node newNode = linkedList.push(56);
+        System.out.println("Before");
+        linkedList.print();
+        System.out.println("                                      ");
+        linkedList.insertAtSpecificIndex(2, 40);
+        System.out.println("After");
+        linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
+        System.out.println("      ");
+        System.out.println("After Deleting The Value");
+        linkedList.deleteAtIndexPosition(40);
+        linkedList.print();
+        System.out.println(" ");
+        linkedList.size();
+
     }
 }
